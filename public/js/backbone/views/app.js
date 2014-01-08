@@ -1,10 +1,14 @@
 Puls4.Views.App = Backbone.View.extend({
 	events:{
 		"click .publicar" : "showForm",
-		"submit form" : "createPost"
+		"submit form" : "createPost",
+		"click .logo" : "navigateHome"
 	},
 	initialize : function($el){
 		this.$el = $el;
+	},
+	navigateHome: function(){
+		Backbone.history.navigate('/',{trigger:true});
 	},
 	showForm : function () {
 		$('form').slideToggle();

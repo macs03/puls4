@@ -6,11 +6,13 @@
     "consolidate": "~0.9.1",
     "swig": "~0.13.5",
     "socket.io": "~0.9.14",
-    "node-uuid": "~1.4.0"
+    "node-uuid": "~1.4.0",
+    "grunt": "~0.4.2",
+    "grunt-contrib-uglify": "~0.2.7"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
+    "grunt": "~0.4.2",
     "grunt-bb-generate": "~0.1.5",
-    "grunt-contrib-uglify": "~0.2.0"
+    "grunt-contrib-uglify": "~0.2.2"
   }
 }

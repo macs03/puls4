@@ -2,6 +2,7 @@ $(document).ready(function(){
 	console.log('main.js loaded');
 
 	window.views.app =  new Puls4.Views.App( $('body') );
+	window.routers.base =  new Puls4.Routers.Base();
 	//conectadonse al socket.io
 	window.ponyExpress = new PonyExpress({
 		io : window.location.origin
@@ -11,7 +12,6 @@ $(document).ready(function(){
 		window.plugs.article = new PonyExpress.BackbonePlug({
 			collection : window.collections.articles
 		});
-
 	 });
 
 	//c= new Puls4.Collections.Articles()
@@ -26,5 +26,12 @@ $(document).ready(function(){
 		view.$el.prependTo('.posts');
 	});
 
-	window.collections.articles.fetch();
+	var xhr = window.collections.articles.fetch();
+
+	xhr.done(function(){
+		Backbone.history.start({
+			root : '/',
+			pushState : true
+		});
+	});
 });
